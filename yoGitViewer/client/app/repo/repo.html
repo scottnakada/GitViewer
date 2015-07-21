@@ -1,0 +1,50 @@
+<h2>Repo Details for {{repo.name}}</h2>
+
+<div>
+  Open Issues: {{repo.open_issues_count}}
+</div>
+<div>
+  Contributors Count: {{repo.contributors.length}}
+</div>
+<table border="2" ng-show="contributorsTableShow">
+  <thead>
+  <tr>
+    <th colspan="4">Contributors</th>
+  </tr>
+  <tr>
+    <th>Icon</th>
+    <th>Username</th>
+    <th>Github Page</th>
+    <th>Contributions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="contributor in repo.contributors | orderBy: '-contributions'">
+    <td><img ng-src="{{contributor.avatar_url}}" width="50px"/></td>
+    <td>
+      <a ng-href="/user/{{contributor.login}}">
+        <button type="button">
+          {{contributor.login}}
+        </button>
+      </a>
+    </td>
+    <td>
+      <a ng-href="{{contributor.html_url}}">
+        <button type="button">
+          {{contributor.login}}
+        </button>
+      </a>
+    </td>
+    <td>
+      {{contributor.contributions}}
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<a href="/search">
+  <button type="button">Return to search</button>
+</a>
+<a href="/user/{{repo.owner.login}}">
+  <button type="button">Back to {{repo.owner.login}}</button>
+</a>

@@ -1,0 +1,52 @@
+<ion-view view-title="Repo">
+    <ion-content class="padding">
+        <div class="card">
+            <div class="item item-divider item-positive">
+                <h2>Repo Details for {{repo.name}}</h2>
+            </div>
+            <div class="item">
+                <ion-list>
+                    <ion-item>
+                        Open Issues: {{repo.open_issues_count}}
+                    </ion-item>
+                    <ion-item>
+                        Contributors Count: {{repo.contributors.length}}
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>
+        <div class="card" ng-show="contributorsTableShow">
+            <div class="item item-divider item-balanced">
+                Contributors
+            </div>
+            <div class="card" ng-repeat="contributor in repo.contributors | orderBy: '-contributions'">
+                <div class="item item-divider item-balanced">
+                    {{contributor.login}}
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img ng-src="{{contributor.avatar_url}}" width="50px"/>
+                    </div>
+                    <div class="col">
+                        <button class="button button-positive" type="button"
+                                ng-click="showUser(contributor.login, repo.name)">
+                            User Info
+                        </button>
+                    </div>
+                    <div class="col">
+                        <a ng-href="{{contributor.html_url}}">
+                            <button class="button button-positive" type="button">
+                                Github Page
+                            </button>
+                        </a>
+                    </div>
+                    <div class="col">
+                        Contributions: {{contributor.contributions}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

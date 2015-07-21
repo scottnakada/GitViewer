@@ -1,0 +1,153 @@
+<div>
+  <h2>{{user.name}}</h2>
+
+  <div class="blink_me colorRed">
+    <h1>{{error}}</h1>
+  </div>
+  <img ng-src="{{user.avatar_url}}" title="{{user.name}}" width="50%"/>
+</div>
+<div>
+  Name: {{user.name}}
+</div>
+<div ng-show="user.company">
+  Company: {{user.company}}
+</div>
+<div ng-show="user.location">
+  Location: {{user.location}}
+</div>
+<div>
+  Public Repos: {{user.public_repos}} Order:
+  <select ng-model="repoSortOrder">
+    <option value="+name">Name</option>
+    <option value="-stargazers_count">Stars</option>
+    <option value="+language">Language</option>
+    <option value="+description">Description</option>
+  </select>
+</div>
+<table border="2" ng-show="reposTableShow">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Repo Link</th>
+    <th>Stars</th>
+    <th>Language</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
+    <td>
+      <a ng-href="{{repo.html_url}}">
+        <button type="button">{{repo.name}}</button>
+      </a>
+    </td>
+    <td>
+      <a ng-href="/repo/{{user.login}}/{{repo.name}}">
+        <button type="button">{{repo.name}}</button>
+      </a>
+    </td>
+    <td>{{repo.stargazers_count|number}}</td>
+    <td>{{repo.language}}</td>
+    <td>{{repo.description}}</td>
+  </tr>
+  </tbody>
+</table>
+<div>
+  Public Gists: {{user.public_gists}}
+</div>
+<table border="2" ng-show="gistsTableShow">
+  <thead>
+  <tr>
+    <th>Id/Goto</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="gist in gists">
+    <td>
+      <a ng-href="{{gist.html_url}}">
+        <button type="button">{{gist.id}}</button>
+      </a>
+    </td>
+    <td>{{gist.description}}</td>
+  </tr>
+  </tbody>
+</table>
+<div>
+  Followers: {{user.followers}}
+</div>
+<table border="2" ng-show="followersTableShow">
+  <thead>
+  <tr>
+    <th>Icon</th>
+    <th>Username</th>
+    <th>Github Page</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="follower in followers">
+    <td><img ng-src="{{follower.avatar_url}}" width="50px"/></td>
+    <td>
+      <a ng-href="/user/{{follower.login}}">
+        <button type="button">
+          {{follower.login}}
+        </button>
+      </a>
+    </td>
+    <td>
+      <a ng-href="{{follower.html_url}}">
+        <button type="button">
+          {{follower.login}}
+        </button>
+      </a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div>
+  Following: {{user.following}}
+</div>
+<table border="2" ng-show="followingTableShow">
+  <thead>
+  <tr>
+    <th>Icon</th>
+    <th>Username</th>
+    <th>Github Page</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="follow in following">
+    <td><img ng-src="{{follow.avatar_url}}" width="50px"/></td>
+    <td>
+      <a ng-href="/user/{{follow.login}}">
+        <button type="button">
+          {{follow.login}}
+        </button>
+      </a>
+    </td>
+    <td>
+      <a ng-href="{{follow.html_url}}">
+        <button type="button">
+          {{follow.login}}
+        </button>
+      </a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div>
+  <a ng-href="{{user.html_url}}">
+    <button type="button">
+      Github Page
+    </button>
+  </a>
+</div>
+<div>
+  <a ng-href="mailto:{{user.email}}">
+    <button type="button">Send Email</button>
+  </a>
+</div>
+
+<a href="/search">
+  <button type="button">Back to Search</button>
+</a>
