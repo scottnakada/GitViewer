@@ -4,10 +4,10 @@
 ionGitViewer/node_modules/
 ionGitViewer/platforms/
 ionGitViewer/plugins/
-yoGitViewer/node_modules
+# yoGitViewer/node_modules
 yoGitViewer/public
 yoGitViewer/.tmp
 .idea/*
-yoGitViewer/client/bower_components
+# yoGitViewer/client/bower_components
 yoGitViewer/dist
 yoGitViewer/server/config/local.env.js
