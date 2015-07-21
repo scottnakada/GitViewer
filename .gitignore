@@ -1,0 +1,13 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+ionGitViewer/node_modules/
+ionGitViewer/platforms/
+ionGitViewer/plugins/
+yoGitViewer/node_modules
+yoGitViewer/public
+yoGitViewer/.tmp
+.idea/*
+yoGitViewer/client/bower_components
+yoGitViewer/dist
+yoGitViewer/server/config/local.env.js

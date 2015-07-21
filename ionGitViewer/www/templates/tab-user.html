@@ -1,0 +1,173 @@
+<ion-view view-title="User">
+    <ion-content class="padding">
+        <div class="card" ng-show="error">
+            <div class="blink_me colorRed">
+                <h1>{{error}}</h1>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-avatar">
+                <img ng-src="{{user.avatar_url}}" title="{{user.name}}"/>
+
+                <h2>{{user.name}}</h2>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider item-positive">
+                General User Info
+            </div>
+            <div class="item">
+                <ion-list>
+                    <ion-item>
+                        Name: {{user.name}}
+                    </ion-item>
+                    <ion-item ng-show="user.company">
+                        Company: {{user.company}}
+                    </ion-item>
+                    <ion-item ng-show="user.location">
+                        Location: {{user.location}}
+                    </ion-item>
+                    <ion-item ng-show="user.email">
+                        Location: <a href="mailto:{{user.email}}">{{user.email}}</a>
+                    </ion-item>
+                    <ion-item ng-show="user.html_url">
+                        Github Page:
+                        <a ng-href="{{user.html_url}}">
+                            <button class="button button-positive">{{user.html_url}}</button>
+                        </a>
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>
+
+        <div class="list card" ng-show="reposTableShow">
+            <div class="item item-divider item-calm">
+                Public Repos: {{user.public_repos}} Order:
+                <select ng-model="repoSortOrder">
+                    <option value="+name">Name</option>
+                    <option value="-stargazers_count">Stars</option>
+                    <option value="+language">Language</option>
+                </select>
+            </div>
+            <div class="item">
+                <div class="list card" ng-repeat="repo in repos | orderBy:repoSortOrder">
+                    <div class="item item-divider item-calm">
+                        <a ng-href="" ng-click="showRepo(repo.owner.login, repo.name)">
+                            {{repo.name}}
+                        </a>
+                    </div>
+                    <div class="item item-text-wrap">
+                        <div class="row">
+                            <div class="col">
+                                <a>
+                                    <button class="button button-positive" type="button"
+                                            ng-click="showRepo(repo.owner.login, repo.name)">
+                                        Repo Info
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col">
+                                Stars: {{repo.stargazers_count|number}}
+                            </div>
+                            <div class="col">
+                                Language: {{repo.language}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-text-wrap">
+                        Description: {{repo.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list card" ng-show="gistsTableShow">
+            <div class="item item-divider item-royal">
+                Public Gists: {{user.public_gists}}
+            </div>
+            <div class="item">
+                <div class="list card" ng-repeat="gist in gists">
+                    <div class="item item-divider item-royal">
+                        <a ng-href="{{gist.html_url}}">
+                            Gist {{gist.id}}
+                        </a>
+                    </div>
+                    <div class="item item-text-wrap">
+                        Description: {{gist.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list card" ng-show="followersTableShow">
+            <div class="item item-divider item-balanced">
+                Followers: {{user.followers}}
+            </div>
+            <div class="item">
+                <div class="list card" ng-repeat="follower in followers">
+                    <div class="item item-divider item-balanced">
+                        <a ng-href="" ng-click="showUser(follower.login)">
+                            {{follower.login}}
+                        </a>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col">
+                                <img ng-src="{{follower.avatar_url}}" width="50px"/>
+                            </div>
+                            <div class="col">
+                                <button class="button button-positive" type="button"
+                                        ng-click="showUser(follower.login, '')">
+                                    User Info
+                                </button>
+                            </div>
+                            <div class="col">
+                                <a ng-href="{{follower.html_url}}">
+                                    <button class="button button-positive" type="button">
+                                        Github Page
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list card" ng-show="followingTableShow">
+            <div class="item item-divider item-energized">
+                Following: {{user.following}}
+            </div>
+            <div class="item">
+                <div class="list card" ng-repeat="follow in following">
+                    <div class="item item-divider item-energized">
+                        <a ng-href="" ng-click="showUser(follow.login, '')">
+                            {{follow.login}}
+                        </a>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col">
+                                <img ng-src="{{follow.avatar_url}}" width="50px"/>
+                            </div>
+                            <div class="col">
+                                <button class="button button-positive" type="button"
+                                        ng-click="showUser(follow.login, '')">
+                                    {{follow.login}}
+                                </button>
+                            </div>
+                            <div class="col">
+                                <a ng-href="{{follow.html_url}}">
+                                    <button class="button button-positive" type="button">
+                                        {{follow.login}}
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

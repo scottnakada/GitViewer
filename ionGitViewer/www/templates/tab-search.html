@@ -1,0 +1,28 @@
+<ion-view view-title="Search">
+    <ion-content class="padding">
+
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">User</span>
+                <input type="text" ng-model="user" required>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Repo</span>
+                <input type="text" ng-model="repo">
+            </label>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="button button-positive" ng-click="showUser(user, repo)">
+                    Find User
+                </button>
+            </div>
+            <div class="col">
+                <button class="button button-positive" ng-click="showRepo(user, repo)">
+                    Find Repo
+                </button>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
