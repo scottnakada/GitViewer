@@ -9,5 +9,5 @@ yoGitViewer/public
 yoGitViewer/.tmp
 .idea/*
 yoGitViewer/client/bower_components
-# yoGitViewer/dist
+yoGitViewer/dist
 yoGitViewer/server/config/local.env.js
