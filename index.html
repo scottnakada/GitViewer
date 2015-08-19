@@ -100,7 +100,7 @@
             Download ZIP
         </a>
 
-        <h2>Platforms (Click the icon to download/start the app)</h2>
+        <h2>Platforms (Click the Platform Icon to Try the App)</h2>
 
         <div class="row">
             <a data-ng-href="{{web.link}}">
@@ -214,30 +214,14 @@
 <!-- About -->
 <section id="about" class="about">
     <div class="container">
-        <h1>Grocery List App</h1>
+        <h1>Github Viewer App</h1>
 
         <h2>What does this app do</h2>
         <h4>
             <p>
                 This app accesses the Github API, and retrieves Github User and Repository information.
-                Versions of this app are available on the web, as well as Android and Apple devices.
-                Click on the icons below to launch the web app, or go to instructions for downloading
-                the mobile applications.
             </p>
         </h4>
-
-        <div class="row">
-            <a data-ng-href="{{web.link}}">
-                <img data-ng-src="{{details.web.image}}" data-ng-show="platforms.web"/>
-            </a>
-            <a data-ng-href="{{android.link}}">
-                <img data-ng-src="{{details.android.image}}" data-ng-show="platforms.android"/>
-            </a>
-            <a data-ng-href="{{ios.link}}">
-                <img data-ng-src="{{details.ios.image}}" data-ng-show="platforms.ios"/>
-            </a>
-        </div>
-
         <h2>Finding a User</h2>
         <h4>
             <p>
@@ -257,6 +241,45 @@
                 button. On the user screen, where the repositories are listed, you can click
                 on the Repo link button to pull up the repository info.
             </p>
+        </h4>
+
+        <h2>Getting the App</h2>
+        <h4>
+            <p>
+                This app is available three ways:
+            </p>
+            <ol>
+                <li>
+                    <a data-ng-href="{{web.link}}">
+                        <img data-ng-src="{{details.web.image}}" data-ng-show="platforms.web"/>
+                    </a>
+                    On the <a data-ng-href="{{web.link}}">web</a>:<br><br>
+                    <iframe width="100%" height="400px"
+                            src="http://scottnakada.github.io/GitViewer/yoGitViewer/dist/public/index.html">
+                        <p>Your browser does not support iframes.</p>
+                    </iframe>
+                </li>
+                <li>
+                    <a data-ng-href="{{android.link}}">
+                        <img data-ng-src="{{details.android.image}}" data-ng-show="platforms.android"/>
+                    </a>
+                    On Android devices through the
+                    <a data-ng-href="{{android.link}}">
+                        Amazon Apps Store
+                    </a>.
+                </li>
+                <li>
+                    <a data-ng-href="{{ios.link}}">
+                        <img data-ng-src="{{details.ios.image}}" data-ng-show="platforms.ios"/>
+                    </a>
+                    On Apple devices (iPhone/iPad), by downloading an app called Ionic View, and selecting the
+                    app id: <a href="#ios">{{ios.ionicViewId}}</a>:<br><br>
+                    <iframe width="100%" height="400px"
+                            src="#ios">
+                        <p>Your browser does not support iframes.</p>
+                    </iframe>
+                </li>
+            </ol>
         </h4>
 
     </div>

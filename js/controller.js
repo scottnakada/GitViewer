@@ -11,7 +11,7 @@
                     link: "http://scottnakada.github.io/GitViewer/yoGitViewer/dist/public/index.html"
                 };
                 $scope.android = {
-                    link: ""
+                    link: "http://www.amazon.com/Quickstart-Prototypes-GitViewer/dp/B0144CR3GI/ref=sr_1_1?s=mobile-apps&ie=UTF8&qid=1440007082&sr=1-1&keywords=gitviewer"
                 };
                 $scope.ios = {
                     link: "#ios",
