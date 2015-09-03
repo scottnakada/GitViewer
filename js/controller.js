@@ -8,13 +8,16 @@
 
                 // Links to the Platform Apps
                 $scope.web = {
-                    link: "http://scottnakada.github.io/GitViewer/yoGitViewer/dist/public/index.html"
+                    link: "http://scottnakada.github.io/GitViewer/yoGitViewer/dist/public/index.html",
+                    image: "images/LaptopGitViewer.png"
                 };
                 $scope.android = {
-                    link: "http://www.amazon.com/Quickstart-Prototypes-GitViewer/dp/B0144CR3GI/ref=sr_1_1?s=mobile-apps&ie=UTF8&qid=1440007082&sr=1-1&keywords=gitviewer"
+                    link: "http://www.amazon.com/Quickstart-Prototypes-GitViewer/dp/B0144CR3GI/ref=sr_1_1?s=mobile-apps&ie=UTF8&qid=1440007082&sr=1-1&keywords=gitviewer",
+                    image: "images/AndroidGitViewer.png"
                 };
                 $scope.ios = {
                     link: "#ios",
+                    image: "images/iPadGitViewer.png",
                     ionicViewId: "16ef8c8e"
                 };
                 $scope.github = {

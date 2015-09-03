@@ -104,13 +104,13 @@
 
         <div class="row">
             <a data-ng-href="{{web.link}}">
-                <img data-ng-src="{{details.web.image}}" data-ng-show="platforms.web"/>
+                <img data-ng-src="{{web.image}}" height="200px" data-ng-show="platforms.web"/>
             </a>
             <a data-ng-href="{{android.link}}">
-                <img data-ng-src="{{details.android.image}}" data-ng-show="platforms.android"/>
+                <img data-ng-src="{{android.image}}" height="200px" data-ng-show="platforms.android"/>
             </a>
             <a data-ng-href="{{ios.link}}">
-                <img data-ng-src="{{details.ios.image}}" data-ng-show="platforms.ios"/>
+                <img data-ng-src="{{ios.image}}" height="200px" data-ng-show="platforms.ios"/>
             </a>
             <a data-ng-href="{{details.arduino.link}}">
                 <img data-ng-src="{{details.arduino.image}}" data-ng-show="platforms.arduino"/>
@@ -251,7 +251,7 @@
             <ol>
                 <li>
                     <a data-ng-href="{{web.link}}">
-                        <img data-ng-src="{{details.web.image}}" data-ng-show="platforms.web"/>
+                        <img data-ng-src="{{web.image}}" height="200px" data-ng-show="platforms.web"/>
                     </a>
                     On the <a data-ng-href="{{web.link}}">web</a>:<br><br>
                     <iframe width="100%" height="400px"
@@ -261,7 +261,7 @@
                 </li>
                 <li>
                     <a data-ng-href="{{android.link}}">
-                        <img data-ng-src="{{details.android.image}}" data-ng-show="platforms.android"/>
+                        <img data-ng-src="{{android.image}}" height="200px" data-ng-show="platforms.android"/>
                     </a>
                     On Android devices through the
                     <a data-ng-href="{{android.link}}">
@@ -270,14 +270,11 @@
                 </li>
                 <li>
                     <a data-ng-href="{{ios.link}}">
-                        <img data-ng-src="{{details.ios.image}}" data-ng-show="platforms.ios"/>
+                        <img data-ng-src="{{ios.image}}" height="200px" data-ng-show="platforms.ios"/>
                     </a>
                     On Apple devices (iPhone/iPad), by downloading an app called Ionic View, and selecting the
-                    app id: <a href="#ios">{{ios.ionicViewId}}</a>:<br><br>
-                    <iframe width="100%" height="400px"
-                            src="#ios">
-                        <p>Your browser does not support iframes.</p>
-                    </iframe>
+                    app id: <a href="#ios">{{ios.ionicViewId}}</a>.   See the next section for directions
+                    to try the app.<br><br>
                 </li>
             </ol>
         </h4>

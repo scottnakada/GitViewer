@@ -215,3 +215,8 @@ hr.small {
 footer {
     padding: 100px 0;
 }
+
+a {
+    color: darkblue;
+    text-decoration: underline;
+}
